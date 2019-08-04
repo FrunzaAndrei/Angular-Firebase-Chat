@@ -1,0 +1,100 @@
+<mat-card class="main">
+  <mat-card-header
+    style="    padding: 0;  margin: 0;  margin-left: -37px;  width: 100vw;"
+  >
+    <div>
+      <span>Chat Messsages</span>
+      <a routerLink="/login" routerLinkActive="active">
+        <button mat-raised-button color="primary">
+          Sign out
+        </button>
+      </a>
+    </div>
+  </mat-card-header>
+  <mat-card-content
+    style="overflow: scroll; max-height:600px; overflow-x: hidden; -ms-overflow-x: hidden;"
+  >
+    <div id="matCardContent" style="height:auto">
+      <mat-card
+        [ngClass]="{
+          mymessage: mess.value.name === currentUserName,
+          othermessage: mess.value.name != currentUserName
+        }"
+        *ngFor="let mess of messages"
+        id="{{ mess.value.name }}{{ mess.value.date }}"
+      >
+        <span id="userNameText">
+          <strong>{{ mess.value.name }}</strong> &nbsp;
+          <span>{{ mess.value.date }}</span>
+        </span>
+        <br />
+
+        <span
+          [ngClass]="{
+            deleteToExit: mess.value.name === currentUserName,
+            deleteDispear: mess.value.name != currentUserName
+          }"
+          class="xToExit"
+          (click)="deleteThisMesg(mess.key, mess.value.name)"
+        >
+          X
+        </span>
+
+        <br />
+        <br />
+
+        <span id="userMessageText"> {{ mess.value.message }} </span>
+        <br />
+        <img
+          *ngFor="let img of mess.value.images"
+          id="messageImg"
+          src="{{ img }}"
+        />
+      </mat-card>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+  <mat-card-footer>
+    <div class="form-group">
+      <label for="file">Choose File: &ensp;</label>
+      <input
+        type="file"
+        id="file"
+        multiple
+        (change)="handleFileInput($event.target.files)"
+      />
+    </div>
+    <br />
+    <mat-progress-bar
+       id ="progressBar"
+      *ngIf="isUploading"
+      mode="determinate"
+      value="{{ progress }}"
+    ></mat-progress-bar>
+    <br />
+    <mat-form-field id="textArea" class="full-width">
+      <textarea
+        onfocus='this.value = ""'
+        #message
+        matInput
+        placeholder="Write message here"
+      ></textarea> </mat-form-field
+    ><br />
+    <button
+      id="buttonSend"
+      mat-raised-button
+      color="primary"
+      (click)="postMessage(message.value)"
+    >
+      Send
+    </button>
+  </mat-card-footer>
+</mat-card>

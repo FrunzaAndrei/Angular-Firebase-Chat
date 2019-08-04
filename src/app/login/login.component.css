@@ -1,0 +1,30 @@
+.mat-card{
+    margin:4rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+
+.example-form,
+.mat-card-actions{
+    display: flex;
+    flex-direction:column;
+  }
+
+.mat-form-field{
+    margin-top:1rem;
+}
+
+#buttonSignInGoogle{
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+
+@media screen and (max-width:340px){
+    .mat-card{
+        width:90%;
+        margin: 0;
+    }
+}
