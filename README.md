@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## My description
+- this is my chat app 
+- i used angular and firebase to make the app
+- you will need to install npm 
+- to make it run , open project folder and write "ng serve" in command prompt associated with chat's folder
+- you will found it in your browser with localhost:4200
+- you can log-in with google acount or by creating an acount with any email and any password
+- you can sent meassages or files 
