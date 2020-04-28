@@ -34,3 +34,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - you will found it in your browser with localhost:4200
 - you can log-in with google acount or by creating an acount with any email and any password
 - you can sent meassages or files 
+- try it : https://angular-firebase-chat.herokuapp.com/
